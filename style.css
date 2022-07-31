@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@800;900&display=swap');
+  
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #333;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  height: 350px;
+  width: 100%;
+  transform-style: preserve-3d;
+}
+
+.container div {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  
+  transform-style: preserve-3d;
+  animation: animate 7s linear infinite reverse;
+}
+
+@keyframes animate{
+  @ 0% {
+    transform: perspective(2000px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.1);
+    }
+  100% {
+        transform: perspective(2400px) rotateX(360deg) rotateY(10deg) rotateZ(10deg) scale(2);
+    }  
+}
+
+.container div span {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transform: rotateX(calc(var(--i) * 15deg))
+}
+.container div span::before{
+  content:'HUZZAH!';
+  position: absolute;
+  width: 100%;
+  height: 300px;
+  text-align: center;
+  justify-content: center;
+  color: #fffd;
+  font-size: 5em;
+  font-weight: 1200;
+  -webkit-text-stroke: 2px #000;
+  text-shadow: 0 0 50px rgba(0,0,0,0.5);
+}
+.container div span:nth-child(2n):before
+{
+  color: rgba(255,255,255,0.8);
+}
+.container div span:nth-child(2n+1):before
+{
+  color: rgba(255,55,255,0.8);
+}
