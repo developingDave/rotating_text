@@ -29,7 +29,7 @@ body {
   width: 100%;
   
   transform-style: preserve-3d;
-  animation: animate 7s linear infinite reverse;
+  animation: animate 7s linear infinite alternate-reverse;
 }
 
 @keyframes animate{
